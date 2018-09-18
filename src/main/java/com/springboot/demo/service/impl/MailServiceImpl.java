@@ -76,8 +76,8 @@ public class MailServiceImpl implements MailService {
         // 发送附件
         file = ResourceUtils.getFile("classpath:static"
                 + Constants.SF_FILE_SEPARATOR + "file"
-                + Constants.SF_FILE_SEPARATOR + "关注科帮网获取更多源码.zip");
-        helper.addAttachment("科帮网", file);
+                + Constants.SF_FILE_SEPARATOR + "更多文件.zip");
+        helper.addAttachment("文件下载", file);
         mailUtil.startHtml(mailSender, message);
     }
 

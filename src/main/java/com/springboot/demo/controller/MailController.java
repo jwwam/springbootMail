@@ -10,7 +10,6 @@ import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -34,6 +33,7 @@ public class MailController extends BaseController {
     @Autowired
     private MailService mailService;
 
+    //用模板发送（两种形式）
     @RequestMapping(value="/send", method = RequestMethod.POST)
     @ResponseBody
     public ModelMap send() {
@@ -52,6 +52,7 @@ public class MailController extends BaseController {
         return getModelMap(StateParameter.SUCCESS, null, "发送成功");
     }
 
+    //普通邮件发送
     @RequestMapping(value="/sendEmail", method = RequestMethod.POST)
     @ResponseBody
     public void sendEmail() {
